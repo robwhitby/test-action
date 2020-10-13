@@ -8,22 +8,18 @@ branding:
 inputs:
   cf_api:
     description: Cloud Foundry API endpoint e.g. https://api.my.cf
-    default: ${{ secrets.CF_API }}
     required: true
   cf_org:
     description: Cloud Foundry Organization Name
-    default: ${{ secrets.CF_ORG }}
     required: true
   cf_space:
     description: Cloud Foundry Space Name
     required: true
   cf_username:
     description: Cloud Foundry Username
-    default: ${{ secrets.CF_USERNAME }}
     required: true
   cf_password:
     description: Cloud Foundry Password
-    default: ${{ secrets.CF_PASSWORD }}
     required: true
   manifest_path:
     description: Cloud Foundry manifest path
