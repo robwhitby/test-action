@@ -38,14 +38,14 @@ runs:
   using: composite
   steps:
   - name: halfpipe-push
-    run: $/entrypoint.sh halfpipe-push
+    run: $GITHUB_ACTION_PATH/entrypoint.sh halfpipe-push
     shell: bash
   - name: halfpipe-check
-    run: $/entrypoint.sh halfpipe-check
+    run: $GITHUB_ACTION_PATH/entrypoint.sh halfpipe-check
     shell: bash
   - name: halfpipe-promote
-    run: $/entrypoint.sh halfpipe-promote
+    run: $GITHUB_ACTION_PATH/entrypoint.sh halfpipe-promote
     shell: bash
   - name: halfpipe-cleanup
-    run: $/entrypoint.sh halfpipe-cleanup
+    run: $GITHUB_ACTION_PATH/entrypoint.sh halfpipe-cleanup
     shell: bash
