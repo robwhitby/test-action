@@ -6,7 +6,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 echo "running $1"
 export PATH="$PATH:$DIR"
 
-cf7 -v
+cf6 -v
 
 cat << EOF > /tmp/request
 {
@@ -22,8 +22,7 @@ cat << EOF > /tmp/request
       "manifestPath": "$INPUT_MANIFEST_PATH",
       "appPath": "$INPUT_APP_PATH",
       "testDomain": "$INPUT_TEST_DOMAIN",
-      "gitRefPath": ".gitRef",
-      "cliVersion": "cf7"
+      "gitRefPath": ".gitRef"
     }
 }
 EOF
