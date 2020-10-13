@@ -3,12 +3,13 @@ echo $GITHUB_REF > .gitRef
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-echo "running entrypoint.sh $1"
+echo "running $1"
 export PATH="$PATH:$DIR"
 
 cf7 -v
 
 echo cf_api = $INPUT_CF_API
+echo space = $INPUT_CF_SPACE
 exit 0
 
 cat << EOF > /tmp/request
