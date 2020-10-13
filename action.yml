@@ -1,0 +1,55 @@
+name: Deploy to Cloud Foundry
+description: cf push with zero downtime
+
+branding:
+  icon: 'truck'
+  color: 'blue'
+
+inputs:
+  cf_api:
+    description: Cloud Foundry API endpoint e.g. https://api.my.cf
+    default: ${{ secrets.CF_API }}
+    required: true
+  cf_org:
+    description: Cloud Foundry Organization Name
+    default: ${{ secrets.CF_ORG }}
+    required: true
+  cf_space:
+    description: Cloud Foundry Space Name
+    required: true
+  cf_username:
+    description: Cloud Foundry Username
+    default: ${{ secrets.CF_USERNAME }}
+    required: true
+  cf_password:
+    description: Cloud Foundry Password
+    default: ${{ secrets.CF_PASSWORD }}
+    required: true
+  manifest_path:
+    description: Cloud Foundry manifest path
+    default: manifest.yml
+    required: true
+  app_path:
+    description: Cloud Foundry API endpoint e.g. https://api.my.cf
+    default: .
+    required: true
+  test_domain:
+    description: Domain for testing
+    default: springernature.app
+    required: true
+
+runs:
+  using: composite
+  steps:
+  - name: halfpipe-push
+    run: $/entrypoint.sh halfpipe-push
+    shell: bash
+  - name: halfpipe-check
+    run: $/entrypoint.sh halfpipe-check
+    shell: bash
+  - name: halfpipe-promote
+    run: $/entrypoint.sh halfpipe-promote
+    shell: bash
+  - name: halfpipe-cleanup
+    run: $/entrypoint.sh halfpipe-cleanup
+    shell: bash
