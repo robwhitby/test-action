@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo $GITHUB_REF > .gitRef
 
-echo 'running entrypoint.sh $1'
+echo "running entrypoint.sh $1"
 
 cat << EOF > /tmp/request
 {
