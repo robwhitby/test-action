@@ -8,6 +8,9 @@ export PATH="$PATH:$DIR"
 
 cf7 -v
 
+echo cf_api = $INPUT_CF_API
+exit 0
+
 cat << EOF > /tmp/request
 {
     "source": {
