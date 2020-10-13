@@ -3,8 +3,6 @@ echo $GITHUB_REF > .gitRef
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-echo DIR=$DIR
-
 echo "running entrypoint.sh $1"
 export PATH="$PATH:$DIR"
 
@@ -30,4 +28,4 @@ cat << EOF > /tmp/request
 }
 EOF
 
-cat /tmp/request | $DIR/out `pwd`
+cat /tmp/request | deploy `pwd`
