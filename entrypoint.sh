@@ -8,10 +8,6 @@ export PATH="$PATH:$DIR"
 
 cf7 -v
 
-echo cf_api = $INPUT_CF_API
-echo space = $INPUT_CF_SPACE
-exit 0
-
 cat << EOF > /tmp/request
 {
     "source": {
