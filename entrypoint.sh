@@ -2,6 +2,9 @@
 echo $GITHUB_REF > .gitRef
 
 echo "running entrypoint.sh $1"
+export PATH="$PATH:$PWD"
+
+cf7 -v
 
 cat << EOF > /tmp/request
 {
@@ -17,9 +20,10 @@ cat << EOF > /tmp/request
       "manifestPath": "$INPUT_MANIFEST_PATH",
       "appPath": "$INPUT_APP_PATH",
       "testDomain": "$INPUT_TEST_DOMAIN",
-      "gitRefPath": ".gitRef"
+      "gitRefPath": ".gitRef",
+      "cliVersion": "cf7"
     }
 }
 EOF
 
-cat /tmp/request | /opt/resource/out `pwd`
+cat /tmp/request | ./out `pwd`
