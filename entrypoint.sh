@@ -28,4 +28,4 @@ cat << EOF > /tmp/request
 }
 EOF
 
-cat /tmp/request | deploy `pwd`
+cat /tmp/request | out `pwd`
