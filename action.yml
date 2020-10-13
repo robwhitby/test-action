@@ -40,12 +40,48 @@ runs:
   - name: halfpipe-push
     run: $GITHUB_ACTION_PATH/entrypoint.sh halfpipe-push
     shell: bash
+    env:
+      INPUT_CF_API: ${{ inputs.cf_api }}
+      INPUT_CF_ORG: ${{ inputs.cf_org }}
+      INPUT_CF_SPACE: ${{ inputs.cf_space }}
+      INPUT_CF_USERNAME: ${{ inputs.cf_username }}
+      INPUT_CF_PASSWORD: ${{ inputs.cf_password }}
+      INPUT_MANIFEST_PATH: ${{ inputs.manifest_path }}
+      INPUT_APP_PATH: ${{ inputs.app_path }}
+      INPUT_TEST_DOMAIN: ${{ inputs.test_domain }}
   - name: halfpipe-check
     run: $GITHUB_ACTION_PATH/entrypoint.sh halfpipe-check
     shell: bash
+    env:
+      INPUT_CF_API: ${{ inputs.cf_api }}
+      INPUT_CF_ORG: ${{ inputs.cf_org }}
+      INPUT_CF_SPACE: ${{ inputs.cf_space }}
+      INPUT_CF_USERNAME: ${{ inputs.cf_username }}
+      INPUT_CF_PASSWORD: ${{ inputs.cf_password }}
+      INPUT_MANIFEST_PATH: ${{ inputs.manifest_path }}
+      INPUT_APP_PATH: ${{ inputs.app_path }}
+      INPUT_TEST_DOMAIN: ${{ inputs.test_domain }}
   - name: halfpipe-promote
     run: $GITHUB_ACTION_PATH/entrypoint.sh halfpipe-promote
     shell: bash
+    env:
+      INPUT_CF_API: ${{ inputs.cf_api }}
+      INPUT_CF_ORG: ${{ inputs.cf_org }}
+      INPUT_CF_SPACE: ${{ inputs.cf_space }}
+      INPUT_CF_USERNAME: ${{ inputs.cf_username }}
+      INPUT_CF_PASSWORD: ${{ inputs.cf_password }}
+      INPUT_MANIFEST_PATH: ${{ inputs.manifest_path }}
+      INPUT_APP_PATH: ${{ inputs.app_path }}
+      INPUT_TEST_DOMAIN: ${{ inputs.test_domain }}
   - name: halfpipe-cleanup
     run: $GITHUB_ACTION_PATH/entrypoint.sh halfpipe-cleanup
     shell: bash
+    env:
+      INPUT_CF_API: ${{ inputs.cf_api }}
+      INPUT_CF_ORG: ${{ inputs.cf_org }}
+      INPUT_CF_SPACE: ${{ inputs.cf_space }}
+      INPUT_CF_USERNAME: ${{ inputs.cf_username }}
+      INPUT_CF_PASSWORD: ${{ inputs.cf_password }}
+      INPUT_MANIFEST_PATH: ${{ inputs.manifest_path }}
+      INPUT_APP_PATH: ${{ inputs.app_path }}
+      INPUT_TEST_DOMAIN: ${{ inputs.test_domain }}
